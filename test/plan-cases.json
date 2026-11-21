@@ -1,0 +1,1214 @@
+[
+  {
+    "name": "one_store_wins_when_fees_outweigh_savings",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 10,
+            "b": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Bread",
+          "none": [],
+          "prices": {
+            "a": 8,
+            "b": 9
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 30,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 30,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 30,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 10,
+              "quantity": 1
+            },
+            {
+              "name": "Bread",
+              "price": 8,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 18,
+          "total": 48
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 48
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 48,
+        "b": 48
+      },
+      "total": 48,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "split_wins_when_savings_exceed_extra_fee",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 20
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 40,
+            "b": 15
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 10,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 5,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 5,
+          "total": 15
+        },
+        "b": {
+          "deliveryFee": 10,
+          "items": [
+            {
+              "name": "Cheese",
+              "price": 15,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 15,
+          "total": 25
+        }
+      },
+      "bestSingle": {
+        "store": "b",
+        "total": 45
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 5,
+      "singleStoreTotals": {
+        "a": 55,
+        "b": 45
+      },
+      "total": 40,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "split_rejected_when_fee_exceeds_savings",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 6
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 7,
+            "b": 6
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 30,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 30,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 30,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 5,
+              "quantity": 1
+            },
+            {
+              "name": "Cheese",
+              "price": 7,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 12,
+          "total": 42
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 42
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 42,
+        "b": 42
+      },
+      "total": 42,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "store_under_minimum_moves_items_out",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 20,
+            "b": 10
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Water",
+          "none": [],
+          "prices": {
+            "a": 12,
+            "b": 11
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 30,
+            "b": 25
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 50,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 20,
+              "quantity": 1
+            },
+            {
+              "name": "Water",
+              "price": 12,
+              "quantity": 1
+            },
+            {
+              "name": "Cheese",
+              "price": 30,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 62,
+          "total": 62
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 62
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 62,
+        "b": null
+      },
+      "total": 62,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "store_meeting_minimum_keeps_its_basket",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 20
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 40,
+            "b": 25
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 20,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 10,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 5,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 5,
+          "total": 15
+        },
+        "b": {
+          "deliveryFee": 10,
+          "items": [
+            {
+              "name": "Cheese",
+              "price": 25,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 25,
+          "total": 35
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 55
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 5,
+      "singleStoreTotals": {
+        "a": 55,
+        "b": 55
+      },
+      "total": 50,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "no_plan_when_every_store_misses_minimum",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 10,
+            "b": 12
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 100,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 100,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {},
+      "bestSingle": null,
+      "feasible": false,
+      "savingsVsBestSingle": null,
+      "singleStoreTotals": {
+        "a": null,
+        "b": null
+      },
+      "total": 0,
+      "unassigned": [
+        "Milk"
+      ]
+    }
+  },
+  {
+    "name": "none_marker_excludes_store_for_item",
+    "input": {
+      "items": [
+        {
+          "name": "Paper",
+          "none": [
+            "a"
+          ],
+          "prices": {
+            "a": 5,
+            "b": 9
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "b": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Paper",
+              "price": 9,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 9,
+          "total": 9
+        }
+      },
+      "bestSingle": {
+        "store": "b",
+        "total": 9
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": null,
+        "b": 9
+      },
+      "total": 9,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "item_no_store_sells_is_unassigned",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 6
+          },
+          "quantity": 2
+        },
+        {
+          "name": "Unicorn",
+          "none": [],
+          "prices": {
+            "a": null,
+            "b": null
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 5,
+              "quantity": 2
+            }
+          ],
+          "subtotal": 10,
+          "total": 10
+        }
+      },
+      "bestSingle": null,
+      "feasible": true,
+      "savingsVsBestSingle": null,
+      "singleStoreTotals": {
+        "a": null,
+        "b": null
+      },
+      "total": 10,
+      "unassigned": [
+        "Unicorn"
+      ]
+    }
+  },
+  {
+    "name": "max_stores_one_prefers_store_covering_more_items",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Tahini",
+          "none": [],
+          "prices": {
+            "a": null,
+            "b": 12
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 1,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "b": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 9,
+              "quantity": 1
+            },
+            {
+              "name": "Tahini",
+              "price": 12,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 21,
+          "total": 21
+        }
+      },
+      "bestSingle": {
+        "store": "b",
+        "total": 21
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": null,
+        "b": 21
+      },
+      "total": 21,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "max_stores_one_never_uses_two_stores",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 9,
+            "c": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 4,
+            "c": 9
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 1,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        },
+        "c": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "C"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "b": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 9,
+              "quantity": 1
+            },
+            {
+              "name": "Cheese",
+              "price": 4,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 13,
+          "total": 13
+        }
+      },
+      "bestSingle": {
+        "store": "b",
+        "total": 13
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 14,
+        "b": 13,
+        "c": 18
+      },
+      "total": 13,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "max_stores_three_lowers_total",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 9,
+            "c": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 4,
+            "c": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Olives",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 9,
+            "c": 3
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 3,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        },
+        "c": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "C"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 5,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 5,
+          "total": 5
+        },
+        "b": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Cheese",
+              "price": 4,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 4,
+          "total": 4
+        },
+        "c": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Olives",
+              "price": 3,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 3,
+          "total": 3
+        }
+      },
+      "bestSingle": {
+        "store": "c",
+        "total": 21
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 9,
+      "singleStoreTotals": {
+        "a": 23,
+        "b": 22,
+        "c": 21
+      },
+      "total": 12,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "default_max_stores_is_two",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 9,
+            "c": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 4,
+            "c": 9
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Olives",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 9,
+            "c": 3
+          },
+          "quantity": 1
+        }
+      ],
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        },
+        "c": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "C"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "b": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 9,
+              "quantity": 1
+            },
+            {
+              "name": "Cheese",
+              "price": 4,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 13,
+          "total": 13
+        },
+        "c": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Olives",
+              "price": 3,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 3,
+          "total": 3
+        }
+      },
+      "bestSingle": {
+        "store": "c",
+        "total": 21
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 5,
+      "singleStoreTotals": {
+        "a": 23,
+        "b": 22,
+        "c": 21
+      },
+      "total": 16,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "disabled_store_is_never_used",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 1
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": false,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 9,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 9,
+          "total": 9
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 9
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 9,
+        "b": null
+      },
+      "total": 9,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "quantity_multiplies_price_and_subtotal",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 4
+          },
+          "quantity": 3
+        }
+      ],
+      "maxStores": 1,
+      "stores": {
+        "a": {
+          "deliveryFee": 5,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 5,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 4,
+              "quantity": 3
+            }
+          ],
+          "subtotal": 12,
+          "total": 17
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 17
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 17
+      },
+      "total": 17,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "tie_goes_to_first_store_name",
+    "input": {
+      "items": [
+        {
+          "name": "Cola",
+          "none": [],
+          "prices": {
+            "a": 5,
+            "b": 5,
+            "c": 5
+          },
+          "quantity": 1
+        },
+        {
+          "name": "Cheese",
+          "none": [],
+          "prices": {
+            "a": 9,
+            "b": 9,
+            "c": 9
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        },
+        "c": {
+          "deliveryFee": 10,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "C"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 10,
+          "items": [
+            {
+              "name": "Cola",
+              "price": 5,
+              "quantity": 1
+            },
+            {
+              "name": "Cheese",
+              "price": 9,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 14,
+          "total": 24
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 24
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 24,
+        "b": 24,
+        "c": 24
+      },
+      "total": 24,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "tie_prefers_fewer_stores",
+    "input": {
+      "items": [
+        {
+          "name": "Milk",
+          "none": [],
+          "prices": {
+            "a": 10,
+            "b": 10
+          },
+          "quantity": 1
+        }
+      ],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        },
+        "b": {
+          "deliveryFee": 0,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "B"
+        }
+      }
+    },
+    "output": {
+      "baskets": {
+        "a": {
+          "deliveryFee": 0,
+          "items": [
+            {
+              "name": "Milk",
+              "price": 10,
+              "quantity": 1
+            }
+          ],
+          "subtotal": 10,
+          "total": 10
+        }
+      },
+      "bestSingle": {
+        "store": "a",
+        "total": 10
+      },
+      "feasible": true,
+      "savingsVsBestSingle": 0,
+      "singleStoreTotals": {
+        "a": 10,
+        "b": 10
+      },
+      "total": 10,
+      "unassigned": []
+    }
+  },
+  {
+    "name": "empty_order_gives_empty_plan",
+    "input": {
+      "items": [],
+      "maxStores": 2,
+      "stores": {
+        "a": {
+          "deliveryFee": 30,
+          "enabled": true,
+          "minOrder": 0,
+          "name": "A"
+        }
+      }
+    },
+    "output": {
+      "baskets": {},
+      "bestSingle": null,
+      "feasible": true,
+      "savingsVsBestSingle": null,
+      "singleStoreTotals": {
+        "a": null
+      },
+      "total": 0,
+      "unassigned": []
+    }
+  }
+]

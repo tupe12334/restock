@@ -1,0 +1,29 @@
+# Standalone restock: the web server, and a daily refresh of prices and deals.
+#   docker compose up -d restock
+#   docker compose up -d refresh
+# The refresh loop runs prices, then deals, then waits 24 hours. It starts from container start time.
+# Data lives in ./data on the host.
+services:
+  restock:
+    build: .
+    image: restock-card:local
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+
+  refresh:
+    build: .
+    image: restock-card:local
+    volumes:
+      - ./data:/data
+    entrypoint: ["sh", "-c"]
+    command:
+      - |
+        while true; do
+          python3 -m restock prices --max-age-days 1 || echo "prices failed"
+          python3 -m restock deals || echo "deals failed"
+          sleep 86400
+        done
+    restart: unless-stopped

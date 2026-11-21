@@ -1,0 +1,18 @@
+{
+  "suggestions": {
+    "suggestProducts": {
+      "total": 1,
+      "products": [
+        {
+          "barcode": "7290000136141",
+          "productId": 5458561,
+          "localName": "פפסי קולה 1.5 ליטר",
+          "branch": {
+            "regularPrice": 6.9,
+            "specials": []
+          }
+        }
+      ]
+    }
+  }
+}

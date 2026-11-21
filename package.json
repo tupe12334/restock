@@ -1,0 +1,1 @@
+{"name":"restock-card","version":"1.0.0","type":"module","license":"MIT","scripts":{"test":"node --test \"test/*.test.mjs\" && python3 -m unittest discover -s tools -p 'test_*.py' && python3 -m unittest discover -s tests -t ."}}

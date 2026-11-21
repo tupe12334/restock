@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+# Your lists, prices and deals. Never commit them.
+data/
+node_modules/

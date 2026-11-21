@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+PRODID:-//homeassistant.io//local_todo 2.0//EN
+VERSION:2.0
+BEGIN:VTODO
+UID:11111111-0000-0000-0000-000000000001
+CREATED:20261120T203756Z
+DESCRIPTION:Drinks\n1.5 ליטר\nLink victory: https://www.victoryonline.co.il/product/%D7%A4%D7%A4%D7%A1%D7%99-15-%D7%9C%D7%99%D7%98%D7%A8\nLink 
+ ramilevy: https://www.rami-levy.co.il/he/online/search?q=7290000136141&item=7290000136141\nImage: https://dlv1nnscfbvda.cloudfront.net/gs1/7290000136141/7290000136141_S104-07-2024_14-40-10.jpg
+STATUS:NEEDS-ACTION
+SUMMARY:Pepsi Cola
+END:VTODO
+BEGIN:VTODO
+UID:11111111-0000-0000-0000-000000000002
+DESCRIPTION:Pantry\nדבש\, טהור\nPrefer: Yad Mordechai\nLink victory (Yad Mordechai): https://www.victoryonline.co.il/product/%D7%93%D7%91%D7%A9\nLink victory: https://www.victoryonline.co.il/product/%D7%93%D7%91%D7%A9-2\nLink shufersal: https://www.shufersal.co.il/online/he/p/1\nLink ramilevy (Yad Mordechai): https://www.rami-levy.co.il/he/online/search?q=7290002130567&item=7290002130567
+STATUS:NEEDS-ACTION
+SUMMARY:דבש
+END:VTODO
+BEGIN:VTODO
+UID:11111111-0000-0000-0000-000000000003
+DESCRIPTION:Cleaning\nNo links here
+STATUS:NEEDS-ACTION
+SUMMARY:Sponge
+END:VTODO
+BEGIN:VTODO
+UID:11111111-0000-0000-0000-000000000004
+DESCRIPTION:Cleaning\nLink victory: http://example.com/not-https
+STATUS:NEEDS-ACTION
+SUMMARY:Bad link
+END:VTODO
+END:VCALENDAR
